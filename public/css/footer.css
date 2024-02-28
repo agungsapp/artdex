@@ -1,0 +1,118 @@
+footer{
+    padding: 40px 0px;
+    grid-area: footer;
+    height: 290px;
+    /* margin-top: 100px; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    background-color: rgb(29, 29, 29);
+    list-style: none;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+.foot {
+    line-height: 30px;
+    font-size: 14px;
+    /* background-color: #fff; */
+}
+
+.foot h1{
+    font-size: 60px;
+    /* font-weight: 1000; */
+    font-weight: 900;
+    /* background-color: #fff; */
+}
+
+.foot a{
+    color: white;
+    text-decoration: none;
+}
+
+#para{
+    /* height: 200px; */
+    max-width: 350px;
+    height: 100%;
+    gap: 10px;
+    /* background-color: red   ; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* align-items: center; */
+    /* align-items: left; */
+}
+
+.foot h4 p li a li{
+    font-size: 13px;
+}
+
+.foot h4{
+    margin-bottom: 15px;
+    color: goldenrod;
+}
+
+#lii{
+    /* display: grid; */
+    display: flex;
+    gap: 10px;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    /* place-items: center; */
+    /* line-height: 20px; */
+    height: 100%;
+    
+    /* align-items: center; */
+    min-width: 150px;
+    /* align-items: center; */
+    /* background-color: #ff000056; */
+}
+#lii li a:hover{
+    color: goldenrod;
+}
+#liii{
+    /* margin-right: 50px; */
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    /* place-items: center; */
+    height: 100%;
+    /* background-color: red; */
+}
+
+#line{
+    height: 90%;
+    width: 2px;
+    background-color: white;
+}
+
+/* #nyoba{
+    position: relative;  
+    right: 70px;
+    top: 10px;
+} */
+    /* .menu-toggle{
+        display: none;
+    } */
+
+    @media screen and (max-width:1146px) {
+        .foot h1{
+            display: none;
+        }
+        #line{
+            display: none;
+        }
+        footer{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            align-items: center;
+            /* background-color: red; */
+        }
+       
+    }
+  

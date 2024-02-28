@@ -1,0 +1,121 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the footer */
+footer {
+    background-color: #333;
+    padding: 40px;
+}
+
+/* Style for the ArtDex heading */
+.artdex h1 {
+
+    font-size: 100px;
+    font-weight: bolder;
+    color: white;
+    margin-left: 33px;
+    margin-right: 50px;
+}
+
+/* Style for the horizontal line */
+/* .garis {
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+} */
+.garis{
+    height: 170px;
+    width: 1.5px;
+    color: white;
+    background-color: #fff;
+    margin-right: 50px;
+}
+
+/* Style for the description sections */
+.descriptions {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Align items at the start of the flex container */
+    justify-content: space-between;
+}
+
+/* Style for each description section */
+.descriptions .fc {
+    /* width: 1000px; */
+    /* background-color: #fff; */
+    flex: 1;
+    /* margin-right: 150px; */
+}
+
+/* Style for heading in each description section */
+.descriptions h4 {
+    font-size: 18px;
+    color: goldenrod;
+    margin-bottom: 30px;
+}
+
+.descriptions li{
+    color: white;
+}
+
+.fc h4 li i{
+    color: white;
+}
+.fc h4 li a{
+    color: #ccc;
+    list-style: none;
+    text-decoration: none;
+}
+
+#nyoba{
+    margin-right: 120px;
+}
+
+/* Style for paragraphs in description sections */
+.descriptions p {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Style for the quick link list */
+.descriptions .fc ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for quick link items */
+.descriptions .fc ul li {
+    margin-bottom: 5px;
+}
+
+/* Style for the contact information list */
+.descriptions .fc li {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+/* Style for font-awesome icons */
+.descriptions .fc li i {
+    margin-right: 5px;
+}
+
+/* Responsive styling for smaller screens */
+@media only screen and (max-width: 768px) {
+    .descriptions {
+        flex-direction: column;
+    }
+
+    .descriptions .fc {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

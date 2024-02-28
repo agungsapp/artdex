@@ -1,0 +1,107 @@
+body {
+    background-image: url('../assets/images/bg-1.png');
+    /* height: 100%; */
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container2 {
+    /* position: absolute;
+    left: 50%;
+    top: 50%; */
+    margin-top: 50px;
+    width: 38%; /* Lebar container yang lebih kecil */
+    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: .5s;
+}
+
+.container2:hover{
+    backdrop-filter: blur(3px);
+}
+
+.form-container2 {
+    text-align: center;
+}
+
+form {
+    color: #ffffff;
+}
+
+form h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-size: 40px;
+}
+
+form p{
+    color: white;
+    text-align: left;
+    margin-top: 10px;
+}
+form p a{
+    text-decoration: none;
+    color: #d0b100;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+form p a:hover{
+    text-decoration: none;
+    color: #e5c300;
+}
+
+form input {
+    margin: 7px 0;
+    padding: 10px;
+    width: 100%; /* Lebar input yang lebih kecil */
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: left;
+    color: white;
+}
+
+form button {
+    width: 100%; /* Lebar tombol yang lebih kecil */
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgb(172, 146, 0);
+    color: white;
+    cursor: pointer;
+}
+
+.inputan{
+    text-align: left;
+}
+
+::placeholder{
+    color: white;
+}
+
+/* Style hover untuk button */
+form button:hover {
+    background-color: #d0b100;
+}
+
+form label{
+    text-align: left;
+}
