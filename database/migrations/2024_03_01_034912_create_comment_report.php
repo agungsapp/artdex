@@ -15,10 +15,17 @@ return new class extends Migration
     {
         Schema::create('comment_report', function (Blueprint $table) {
             $table->id();
-            $table->string('complainant');
-            $table->string('reported');
+            $table->unsignedBigInteger('complainant_user_id');
+            $table->unsignedBigInteger('reported_user_id');
+            $table->unsignedBigInteger('post_id');
             $table->string('complaint');
+            $table->string('comment');
             $table->timestamps();
+
+            // Foreign key constraints
+            $table->foreign('complainant_user_id')->references('id')->on('users');
+            $table->foreign('reported_user_id')->references('id')->on('users');
+            $table->foreign('post_id')->references('id')->on('posts');
         });
     }
 
