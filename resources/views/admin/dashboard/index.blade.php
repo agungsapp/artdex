@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
 		{{-- header component --}}
-		@dd(Auth::check())
+		{{-- @dd(Auth::check()) --}}
 		{{-- @dd($credentials)
 		@dd($admin) --}}
 
