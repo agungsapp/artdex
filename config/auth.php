@@ -45,6 +45,10 @@ return [
             'driver' => 'jwt',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin', // Sesuaikan dengan nama provider yang Anda gunakan untuk admin
+        ],
     ],
 
     /*
@@ -68,6 +72,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\AdminModel::class,
         ],
 
         // 'users' => [

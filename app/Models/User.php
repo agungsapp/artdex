@@ -45,4 +45,9 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
     {
         return [];
     }
+
+    public function user()
+    {
+        // $this->hasMany(USer);
+    }
 }

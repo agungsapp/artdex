@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminCommentController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminMessageController;
+use App\Http\Controllers\Admin\AdminPostReportController;
 use App\Http\Controllers\Admin\AdminUsersManageController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -36,6 +40,11 @@ use App\Http\Controllers\PostController;
 Route::prefix('app')->name('app.')->group(function () {
     Route::resource('dashboard', AdminDashboardController::class);
     Route::resource('user-manage', AdminUsersManageController::class);
+    Route::resource('comment-report', AdminCommentController::class);
+    Route::resource('post-report', AdminPostReportController::class);
+    Route::resource('message', AdminMessageController::class);
+    Route::get('login', [AdminLoginController::class, 'login'])->name('login');
+    Route::post('authenticate', [AdminLoginController::class, 'authenticate'])->name('authenticate');
 });
 //  NEW ROUTE AREA END
 
