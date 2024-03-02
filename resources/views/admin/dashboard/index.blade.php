@@ -1,6 +1,10 @@
 @extends('admin.layouts.main')
 @section('content')
 		{{-- header component --}}
+		@dd(Auth::check())
+		{{-- @dd($credentials)
+		@dd($admin) --}}
+
 		<x-header-component title="Dashboard" action="/dashboard" />
 
 		<div class="mt-10 grid grid-cols-2 gap-4">

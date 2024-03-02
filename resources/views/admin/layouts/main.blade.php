@@ -53,9 +53,9 @@
 										<!-- Sidebar content here -->
 										<li><a href="{{ route('app.dashboard.index') }}"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
 										<li><a href="{{ route('app.user-manage.index') }}"><i class='bx bxs-user'></i> User Manage</a></li>
-										<li><a><i class='bx bxs-comment'></i> Comment Report</a></li>
-										<li><a><i class='bx bxs-cloud-upload'></i> Post Report</a></li>
-										<li><a><i class='bx bxs-envelope'></i> Message</a></li>
+										<li><a href="{{ route('app.comment-report.index') }}"><i class='bx bxs-comment'></i> Comment Report</a></li>
+										<li><a href="{{ route('app.post-report.index') }}"><i class='bx bxs-cloud-upload'></i> Post Report</a></li>
+										<li><a href="{{ route('app.message.index') }}"><i class='bx bxs-envelope'></i> Message</a></li>
 								</ul>
 
 						</div>
