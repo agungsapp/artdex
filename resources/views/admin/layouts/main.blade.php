@@ -56,6 +56,17 @@
 										<li><a href="{{ route('app.comment-report.index') }}"><i class='bx bxs-comment'></i> Comment Report</a></li>
 										<li><a href="{{ route('app.post-report.index') }}"><i class='bx bxs-cloud-upload'></i> Post Report</a></li>
 										<li><a href="{{ route('app.message.index') }}"><i class='bx bxs-envelope'></i> Message</a></li>
+
+										<li>
+												<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+														<i class='bx bx-exit'></i> Logout
+												</a>
+
+												<form id="logout-form" action="{{ route('app.logout') }}" method="POST" style="display: none;">
+														@csrf
+												</form>
+										</li>
+
 								</ul>
 
 						</div>

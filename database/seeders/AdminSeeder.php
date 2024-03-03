@@ -19,11 +19,13 @@ class AdminSeeder extends Seeder
         // Replace 'your_username' and 'your_password' with the desired admin credentials
         $username = 'admin';
         $password = Hash::make('admin');
+        $email = 'admin@gmail.com';
 
         // Insert the admin record into the 'admins' table
         DB::table('admin')->insert([
             'username' => $username,
             'password' => $password,
+            'email' => $email
         ]);
     }
 }

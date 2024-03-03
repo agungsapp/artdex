@@ -1,7 +1,8 @@
 @props(['title' => 'Welcome', 'action' => '/oke'])
 
 
-<form action="{{ $action }}" class="flex w-full justify-between">
+<form action="{{ $action }}" method="POST" class="flex w-full justify-between">
+		@csrf
 		<h1 class="text-3xl font-bold">{{ $title ?? 'Welcome' }}</h1>
 
 		{{-- <label class="input input-bordered flex items-center gap-2 py-2">
@@ -16,7 +17,8 @@
 				<button type="submit" class="material-symbols-outlined me-7">
 						search
 				</button>
-				<input type="text" id="cari" class="rounded-2xl border-2 border-black p-1 px-3" placeholder="Search">
+				<input type="text" id="cari" name="keyword" class="rounded-2xl border-2 border-black p-1 px-3"
+						placeholder="Search">
 		</label>
 
 </form>

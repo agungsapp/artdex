@@ -1,8 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-		<x-header-component title="Message" action="/user" />
-
-
+		<x-header-component title="Message" action="{{ route('app.message.search') }}" />
 		<div class="py-10">
 				<div class="overflow-x-auto">
 						<table class="table table-xs">

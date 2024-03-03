@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-		<x-header-component title="Comment Report" action="/user" />
+		<x-header-component title="Comment Report" action="{{ route('app.comment-report.search') }}" />
 
 
 

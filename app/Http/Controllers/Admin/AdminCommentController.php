@@ -22,6 +22,28 @@ class AdminCommentController extends Controller
         return view('admin.comment_report.index', $data);
     }
 
+
+    public function search(Request $request)
+    {
+        try {
+            $keyword = $request->keyword;
+
+            $comments = CommentReportModel::where(function ($query) use ($keyword) {
+                $query->where('complaint', 'like', '%' . $keyword . '%')
+                    ->orWhere('comment', 'like', '%' . $keyword . '%');
+            })->get();
+
+            $data = [
+                'comments' => $comments,
+            ];
+
+            return view('admin.comment_report.index', $data);
+        } catch (\Throwable $th) {
+            // Log the error or handle it appropriately
+            alert()->error('Error', 'Error in the system');
+            return redirect()->back();
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

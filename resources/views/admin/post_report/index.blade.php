@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-		<x-header-component title="Post Report" action="/user" />
+		<x-header-component title="Post Report" action="{{ route('app.post-report.search') }}" />
 
 
 		<div class="py-10">

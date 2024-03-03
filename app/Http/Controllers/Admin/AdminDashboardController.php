@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\CommentReportModel;
+use App\Models\MessageModel;
+use App\Models\PostReportModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -16,8 +20,13 @@ class AdminDashboardController extends Controller
     {
         //
         $data = [
-            'title' => 'Dashboard'
+            'users' => User::all()->count(),
+            'comments' => CommentReportModel::all()->count(),
+            'posts' => PostReportModel::all()->count(),
+            'messages' => MessageModel::all()->count(),
         ];
+
+        // dd($data);
         return view('admin.dashboard.index', $data);
     }
 

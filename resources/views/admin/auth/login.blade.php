@@ -26,10 +26,10 @@
 		@include('sweetalert::alert')
 
 
-		<div class="container flex items-center justify-center border-2 border-black p-96" style="height: 100vh">
+		<div class="flex w-full items-center justify-center p-10 lg:p-80" style="height: 100vh">
 
 				{{-- card login --}}
-				<div class="card w-1/3 bg-black text-white shadow-xl">
+				<div class="card w-full bg-black text-white shadow-xl">
 						<form class="card-body" action="{{ route('app.authenticate') }}" method="POST">
 								@csrf
 								<h2 class="mb-10 text-center text-2xl">Login Admin</h2>
@@ -51,7 +51,7 @@
 										<input type="password" name="password" placeholder="password" class="grow" value="" />
 								</label>
 
-								<div class="card-actions justify-end">
+								<div class="card-actions mt-7 justify-end">
 										<button type="submit" class="btn btn-primary">Login</button>
 								</div>
 						</form>
@@ -61,8 +61,6 @@
 		</div>
 
 		@include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
-
-
 </body>
 
 </html>
