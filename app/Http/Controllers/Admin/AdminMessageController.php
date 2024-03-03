@@ -22,6 +22,28 @@ class AdminMessageController extends Controller
         return view('admin.message.index', $data);
     }
 
+    public function search(Request $request)
+    {
+        try {
+            $keyword = $request->keyword;
+
+            $messages = MessageModel::where(function ($query) use ($keyword) {
+                $query->where('subject', 'like', '%' . $keyword . '%')
+                    ->orWhere('message', 'like', '%' . $keyword . '%');
+            })->get();
+
+            $data = [
+                'messages' => $messages,
+            ];
+
+            return view('admin.message.index', $data);
+        } catch (\Throwable $th) {
+            // Log the error or handle it appropriately
+            alert()->error('Error', 'Error in the system');
+            return redirect()->back();
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

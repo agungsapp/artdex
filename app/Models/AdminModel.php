@@ -3,15 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Auth\Authenticatable;
+// use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\User as Model;
 
-class AdminModel extends Model implements AuthenticatableContract
+class AdminModel extends Model
 {
-    use Authenticatable, HasFactory;
+    use  HasFactory;
 
-    protected $guard = 'admin';
+    // protected $guard = 'admin';
     protected $table = 'admin';
     protected $guarded = ['id'];
 }

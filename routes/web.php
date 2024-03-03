@@ -37,15 +37,22 @@ use App\Http\Controllers\PostController;
 
 
 //  NEW ROUTE AREA START
-Route::prefix('app')->name('app.')->group(function () {
+Route::prefix('app')->name('app.')->middleware(['admin'])->group(function () {
     Route::resource('dashboard', AdminDashboardController::class);
     Route::resource('user-manage', AdminUsersManageController::class);
+
+    Route::post('user-manage/search', [AdminUsersManageController::class, 'search'])->name('user-manage.search');
+    Route::post('comment-report/search', [AdminCommentController::class, 'search'])->name('comment-report.search');
+    Route::post('post-report/search', [AdminPostReportController::class, 'search'])->name('post-report.search');
+    Route::post('message/search', [AdminMessageController::class, 'search'])->name('message.search');
+
     Route::resource('comment-report', AdminCommentController::class);
     Route::resource('post-report', AdminPostReportController::class);
     Route::resource('message', AdminMessageController::class);
-    Route::get('login', [AdminLoginController::class, 'login'])->name('login');
-    Route::post('authenticate', [AdminLoginController::class, 'authenticate'])->name('authenticate');
 });
+Route::get('app/login', [AdminLoginController::class, 'login'])->name('app.login')->middleware(['admin.guest']);
+Route::post('app/logout', [AdminLoginController::class, 'logout'])->name('app.logout');
+Route::post('app/authenticate', [AdminLoginController::class, 'authenticate'])->name('app.authenticate')->middleware('guest');
 //  NEW ROUTE AREA END
 
 Route::get('test', function () {

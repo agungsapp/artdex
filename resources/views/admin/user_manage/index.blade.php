@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 @section('content')
-		<x-header-component title="Users Manage" action="/user" />
+		<x-header-component title="Users Manage" action="{{ route('app.user-manage.search') }}" />
 
 
 		<div class="py-10">

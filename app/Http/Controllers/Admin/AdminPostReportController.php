@@ -21,6 +21,29 @@ class AdminPostReportController extends Controller
         return view('admin.post_report.index', $data);
     }
 
+    public function search(Request $request)
+    {
+        try {
+            $keyword = $request->keyword;
+
+            $posts = PostReportModel::where(function ($query) use ($keyword) {
+                $query->where('category', 'like', '%' . $keyword . '%')
+                    ->orWhere('description', 'like', '%' . $keyword . '%')
+                    ->orWhere('complaints', 'like', '%' . $keyword . '%');
+            })->get();
+
+            $data = [
+                'posts' => $posts,
+            ];
+
+            return view('admin.post_report.index', $data);
+        } catch (\Throwable $th) {
+            // Log the error or handle it appropriately
+            alert()->error('Error', 'Error in the system');
+            return redirect()->back();
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -29,6 +29,33 @@ class AdminUsersManageController extends Controller
         return view('admin.user_manage.index', $data);
     }
 
+    public function search(Request $request)
+    {
+        try {
+            $keyword = $request->keyword;
+
+            $users = User::where(function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%')
+                    ->orWhere('username', 'like', '%' . $keyword . '%')
+                    ->orWhere('email', 'like', '%' . $keyword . '%')
+                    ->orWhere('phone', 'like', '%' . $keyword . '%')
+                    // Add other fields as needed
+                    ->orWhere('status', 'like', '%' . $keyword . '%')
+                    ->orWhere('activate', 'like', '%' . $keyword . '%');
+            })->get();
+
+            $data = [
+                'users' => $users,
+            ];
+
+            return view('admin.user_manage.index', $data);
+        } catch (\Throwable $th) {
+            // Log the error or handle it appropriately
+            alert()->error('Error', 'Error in the system');
+            return redirect()->back();
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

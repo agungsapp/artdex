@@ -21,19 +21,35 @@ class AdminLoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        $credentials = $request->only('username', 'password');
+        try {
+            $credentials = $request->validate([
+                'username' => ['required'],
+                'password' => ['required'],
+            ]);
 
-        $admin = AdminModel::where('username', $credentials['username'])->first();
+            if (Auth::guard('admin')->attempt($credentials)) {
+                $request->session()->regenerate();
+                return redirect()->to(route('app.dashboard.index'));
+            }
 
-        if (!$admin || !password_verify($credentials['password'], $admin->password)) {
-            // Authentication failed
-            return redirect()->route('admin.login')->with('error', 'Invalid username or password');
+            return back()->withErrors([
+                'username' => 'The provided credentials do not match our records.',
+            ])->onlyInput('username');
+        } catch (\Throwable $th) {
+            throw $th;
+            return "fail in server";
         }
+    }
 
-        // Authentication passed
-        Auth::login($admin);
+    public function logout(Request $request)
+    // public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
 
-        return redirect()->intended('/app/dashboard'); // Redirect to the dashboard or any desired page
+        $request->session()->invalidate();
 
+        $request->session()->regenerateToken();
+
+        return redirect()->to(route('app.login'));
     }
 }
