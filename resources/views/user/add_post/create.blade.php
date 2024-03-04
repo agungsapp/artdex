@@ -29,11 +29,11 @@
 						@csrf
 						<div class="mb-3">
 								{{-- <label for="title" class="form-label">Title</label> --}}
-								<input placeholder="Title" type="text" style="color:rgb(158, 158, 158);padding-left:9px; padding:6px;width: 100%; border-radius:5px;border:1px solid gainsboro;  name="title" id="title">
+								<input placeholder="Title" type="text" style="color:rgb(128, 128, 128);padding-left:9px;padding:6px;width: 100%; border-radius:5px;border:1px solid gainsboro;"  name="title" id="title">
 						</div>
 						<div class="mb-3">
 								{{-- <label for="description" class="form-label">Description</label> --}}
-								<div class="">
+								<div class="form-floating">
 										<textarea style="color:rgb(158, 158, 158);padding:9px;width: 100%; border-radius:5px;border:1px solid gainsboro;" name="description" placeholder="Type a description here" id="description"
 										  style="height: 100px"></textarea>
 
@@ -43,7 +43,8 @@
 						<div class="mb-3">
 								{{-- <label for="type" class="form-label">type</label> --}}
 
-								<select style="color:rgb(158, 158, 158);padding:9px;width: 100%; border-radius:5px;border:1px solid gainsboro; aria-placeholder="Select Category" id="type" name="type" aria-label="Default select example">
+								<select style="color:rgb(128, 128, 128);padding-left:9px;padding:6px;width: 100%; border-radius:5px;border:1px solid gainsboro;"
+								 aria-placeholder="Select Category" id="type" name="type" aria-label="Default select example">
 										<option selected>Select Category</option>
 										<option value="2d">2D</option>
 										<option value="3d">3D</option>

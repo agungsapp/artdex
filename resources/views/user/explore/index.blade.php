@@ -32,13 +32,13 @@
 								<li><a href="{{ route('user.explore.index') }}">Explore</a></li>
 								<li><a href="/#pricing">Premium</a></li>
 								<li><a href="/#contact">Contact</a></li>
-								<li class="dropdown">
+								{{-- <li class="dropdown">
 										<a href="#" id="btnlanguage">Language</a>
 										<div class="dropdown-content">
 												<a href="#" onclick="changeLanguage('id')" data-lang="id">Bahasa <br> Indonesia</a>
 												<a href="#" onclick="changeLanguage('en')"data-lang="en" class="active">English</a>
 										</div>
-								</li>
+								</li> --}}
 								<li><a href="profile">Profile</a></li>
 
 						</ul>
