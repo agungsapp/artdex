@@ -69,7 +69,7 @@
 										</div>
 								</div>
 						</div>
-						<h2>Root of life</h2>
+						<h2>{{ $post->title }}</h2>
 						<img id="penerbit" src="{{ Storage::url($author->image) }}" alt="">
 						<h3>{{ $author->name }}</h3>
 						<div class="outline">
@@ -86,7 +86,7 @@
 						<h2>Comment Section</h2>
 						<div class="user">
 								<div class="use">
-										<h3>Name</h3>
+										<h3>{{ Auth::user()->name }}</h3>
 										<button id="btnReport2"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></button>
 										<div id="popupReport2" class="modal">
 												<div class="modal-content">
@@ -100,7 +100,7 @@
 												</div>
 										</div>
 								</div>
-								<img src="{{ Storage::url($post->image) }}" alt="image post">
+								<img src="{{ Storage::url(Auth::user()->image) }}" alt="image post">
 
 								<div class="line"></div>
 								<p>{{ $post->description }}</p>
