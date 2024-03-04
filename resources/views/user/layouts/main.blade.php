@@ -1,4 +1,4 @@
-@extends('layouts.footer')
+{{-- @extends('layouts.footer') --}}
 <!DOCTYPE html>
 <html lang="en">
 

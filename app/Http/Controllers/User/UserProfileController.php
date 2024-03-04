@@ -4,8 +4,10 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserProfileController extends Controller
 {
@@ -77,7 +79,34 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validasi formulir jika diperlukan
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif', // Sesuaikan dengan kebutuhan Anda
+            'name' => 'required|string|max:255',
+            // Tambahkan validasi lainnya sesuai kebutuhan
+        ]);
+
+        // Dapatkan data pengguna yang akan diupdate
+        $user = User::find($id);
+
+        // Proses upload gambar
+        if ($request->hasFile('image')) {
+            $imagePath = 'assets/gallery/' . uniqid() . '.' . $request->image->extension();
+            Storage::putFileAs('public', $request->file('image'), $imagePath);
+
+            // Simpan path gambar ke dalam database
+            $user->image = $imagePath;
+        }
+
+        // Update informasi lainnya
+        $user->name = $request->input('name');
+        // Tambahkan update untuk kolom lainnya sesuai kebutuhan
+
+        // Simpan perubahan ke database
+        $user->save();
+
+        // Redirect atau kembali ke halaman yang sesuai
+        return redirect()->back();
     }
 
     /**

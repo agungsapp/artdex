@@ -1,4 +1,4 @@
-footer{
+footer {
     padding: 40px 0px;
     grid-area: footer;
     height: 290px;
@@ -22,19 +22,19 @@ footer{
     /* background-color: #fff; */
 }
 
-.foot h1{
+.foot h1 {
     font-size: 60px;
     /* font-weight: 1000; */
     font-weight: 900;
     /* background-color: #fff; */
 }
 
-.foot a{
+.foot a {
     color: white;
     text-decoration: none;
 }
 
-#para{
+#para {
     /* height: 200px; */
     max-width: 350px;
     height: 100%;
@@ -47,16 +47,16 @@ footer{
     /* align-items: left; */
 }
 
-.foot h4 p li a li{
+.foot h4 p li a li {
     font-size: 13px;
 }
 
-.foot h4{
+.foot h4 {
     margin-bottom: 15px;
     color: goldenrod;
 }
 
-#lii{
+#lii {
     /* display: grid; */
     display: flex;
     gap: 10px;
@@ -65,16 +65,16 @@ footer{
     /* place-items: center; */
     /* line-height: 20px; */
     height: 100%;
-    
+
     /* align-items: center; */
     min-width: 150px;
     /* align-items: center; */
     /* background-color: #ff000056; */
 }
-#lii li a:hover{
+#lii li a:hover {
     color: goldenrod;
 }
-#liii{
+#liii {
     /* margin-right: 50px; */
     gap: 10px;
     display: flex;
@@ -84,7 +84,7 @@ footer{
     /* background-color: red; */
 }
 
-#line{
+#line {
     height: 90%;
     width: 2px;
     background-color: white;
@@ -95,24 +95,22 @@ footer{
     right: 70px;
     top: 10px;
 } */
-    /* .menu-toggle{
+/* .menu-toggle{
         display: none;
     } */
 
-    @media screen and (max-width:1146px) {
-        .foot h1{
-            display: none;
-        }
-        #line{
-            display: none;
-        }
-        footer{
-            display: flex;
-            justify-content: space-evenly;
-            width: 100%;
-            align-items: center;
-            /* background-color: red; */
-        }
-       
+@media screen and (max-width: 1146px) {
+    .foot h1 {
+        display: none;
     }
-  
+    #line {
+        display: none;
+    }
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
+        /* background-color: red; */
+    }
+}
