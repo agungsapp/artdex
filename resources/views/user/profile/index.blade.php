@@ -39,8 +39,7 @@
 								<!-- Work List Menu-->
 								<div class="col-lg-8">
 										<div class="work-list text-center">
-												<a class="add" href="add">Add Post +</a>
-
+												<a class="add" href="{{ route('user.add-post.create') }}">Add Post +</a>
 										</div>
 								</div>
 								<!-- // Work List Menu -->

@@ -50,7 +50,7 @@
 										<ul class="navbar-nav ml-auto">
 
 												<li class="nav-item active"><a class="nav-link" href="#home">HOME</a></li>
-												<li class="nav-item"><a class="nav-link" href="grid">EXPLORE</a></li>
+												<li class="nav-item"><a class="nav-link" href="{{ route('user.explore.index') }}">EXPLORE</a></li>
 												<li class="nav-item"><a class="nav-link" href="#pricing">PREMIUM</a></li>
 												<li class="nav-item"><a class="nav-link pr0" href="#contact">CONTACT</a></li>
 												<li class="dropdown">

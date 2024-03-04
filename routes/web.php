@@ -23,6 +23,8 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\UserNameController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\User\UserAddPostController;
+use App\Http\Controllers\User\UserExploreController;
 use App\Http\Controllers\User\UserProfileController;
 
 /*
@@ -59,6 +61,8 @@ Route::post('app/authenticate', [AdminLoginController::class, 'authenticate'])->
 
 Route::prefix('user')->name('user.')->middleware(['auth'])->group(function () {
     Route::resource('profile', UserProfileController::class);
+    Route::resource('add-post', UserAddPostController::class);
+    Route::resource('explore', UserExploreController::class);
 });
 
 //  NEW ROUTE AREA END
