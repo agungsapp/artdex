@@ -48,7 +48,7 @@ header .logo{
 
 header ul{
     /* background-color: #ffffffd8; */
-    width: 500px;
+    width: 450px;
     margin-right: 13px;
     list-style: none;
     display: flex;
@@ -183,13 +183,15 @@ header ul li a:hover{
 .pict{
     grid-area: pict;
     /* background-color: red; */
-    align-items: start;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
     display: flex;
 
 }
 .pict img{
     max-width: 450px;
+    min-width: 350px;
+    max-height: 500px;
     border-radius: 15px;
 
 

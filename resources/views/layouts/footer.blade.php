@@ -18,7 +18,7 @@
 		<div class="foot" id="lii">
 				<h4 style="font-size: 18px">Quick Link</h4>
 				<li><a href="/">Home</a></li>
-				<li><a href="grid">Explore</a></li>
+				<li><a href="{{route('user.explore.index')}}">Explore</a></li>
 				<li><a href="/#contact">Contact Us</a></li>
 				{{-- <li></li>
         <li></li>

@@ -53,13 +53,13 @@
 												<li class="nav-item"><a class="nav-link" href="{{ route('user.explore.index') }}">EXPLORE</a></li>
 												<li class="nav-item"><a class="nav-link" href="#pricing">PREMIUM</a></li>
 												<li class="nav-item"><a class="nav-link pr0" href="#contact">CONTACT</a></li>
-												<li class="dropdown">
+												{{-- <li class="dropdown">
 														<a class="nav-link" href="#" id="btnlanguage">LANGUAGE</a>
 														<div class="dropdown-content">
 																<a href="#" onclick="changeLanguage('id')" data-lang="id">Bahasa <br> Indonesia</a>
 																<a href="#" onclick="changeLanguage('en')"data-lang="en" class="active">English</a>
 														</div>
-												</li>
+												</li> --}}
 												<li style="" class="nav-item"><a class="nav-link pr0" href="{{ route('user.profile.index') }}"
 																id="profileLink">PROFILE</a></li>
 										</ul>
@@ -80,7 +80,7 @@
 												<h2 class="text-uppercase" id="rumahseniman">Art <br> Shelter & <br> Home</h2>
 												{{-- <h3 id="run" class="text-uppercase"><span class="typed"></span></h3> --}}
 												<!-- <p>Nikmati karya dari seniman ternama atau sebarkan karyamu sendiri</p> -->
-												<a href="grid" style="border-color:goldenrod;" class="button smooth-scroll">Explore Now</a>
+												<a href="{{ route('user.explore.index') }}" style="border-color:goldenrod;" class="button smooth-scroll">Explore Now</a>
 										</div>
 								</div>
 						</div>
@@ -128,32 +128,32 @@
 						<!-- // Single Portfolio -->
 						<div class="wrapper">
 								<div class="image-item medium">
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img src="assets/images/portfolio/kesiji.png" alt="" srcset="">
 										</a>
 								</div>
 								<div class="image-item large">
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img src="assets/images/portfolio/keloro.png" alt="" srcset="">
 										</a>
 								</div>
 								<div class="image-item large">
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img src="assets/images/portfolio/ketelu.png" alt="" srcset="">
 										</a>
 								</div>
 								<div class="image-item medium">
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img src="assets/images/portfolio/kepapat.png" alt="" srcset="">
 										</a>
 								</div>
 								<div class="image-item medium">
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img src="assets/images/portfolio/kelimo.png" alt="" srcset="">
 										</a>
 								</div>
 								<div class="image-item medium">
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img src="assets/images/portfolio/keenem.png" alt="" srcset="">
 										</a>
 								</div>
@@ -165,11 +165,11 @@
 
 						</div>
 						<div class="more">
-								<a href="grid">View More</a>
+								<a href="{{ route('user.explore.index') }}">View More</a>
 						</div>
 				</div>
 		</section>
-		<a href="grid">
+		<a href="{{ route('user.explore.index') }}">
 				<div class="discov">
 						<div class="item" id="itmg">
 								<img id="" src="assets/images/monalisa.png" alt="" srcset="">
@@ -186,14 +186,14 @@
 										<div></div>
 								</div>
 								<p>Find some paintings that are visited by other visitors and are updated every day.</p>
-								<a href="grid">
+								<a href="{{ route('user.explore.index') }}">
 										<img id="discov" src="assets/images/discov.png" alt="" srcset="">
 								</a>
 						</div>
 
 
 				</div>
-				<a href="grid">
+				<a href="{{ route('user.explore.index') }}">
 						<div class="discov" id="discov2">
 								<div class="item" id="text">
 										<h2>Find inspiration in the art field that suits you and build your own exciting portfolio!</h2>
@@ -202,12 +202,12 @@
 												<div></div>
 										</div>
 										{{-- <p>Find some paintings that are visited by other visitors and are updated every day.</p> --}}
-										<a href="grid">
+										<a href="{{ route('user.explore.index') }}">
 												<img id="discov" src="assets/images/discov.png" alt="" srcset="">
 										</a>
 								</div>
 								<div class="item" id="itmg">
-										<a href="grid" style="">
+										<a href="{{ route('user.explore.index') }}" style="">
 												<img style="z-index: 99" id="" src="assets/images/statue.png" alt="" srcset="">
 												<img id="numpuk" src="assets/images/oldman.png" alt="" srcset="">
 										</a>

@@ -22,22 +22,26 @@
 <body>
 		<div class="wrapper">
 				<header>
-						<div class="logo">
-								<img src="logo.png" alt="">
-						</div>
+						<a href="/">
+							<div class="logo">
+								<img src="{{ asset('logo.png') }}" alt="">
+							</div>
+					</a>
 						<ul>
 								<li><a href="/">Home</a></li>
-								<li><a class="active" style="color: goldenrod" href="">Explore</a></li>
+								<li><a href="{{ route('user.explore.index') }}">Explore</a></li>
 								<li><a href="/#pricing">Premium</a></li>
 								<li><a href="/#contact">Contact</a></li>
-								<li class="dropdown">
+								{{-- <li class="dropdown">
 										<a href="#" id="btnlanguage">Language</a>
 										<div class="dropdown-content">
 												<a href="#" onclick="changeLanguage('id')" data-lang="id">Bahasa <br> Indonesia</a>
 												<a href="#" onclick="changeLanguage('en')"data-lang="en" class="active">English</a>
 										</div>
-								</li>
+
+								</li> --}}
 								<li><a href="{{ route('user.profile.index') }}">Profile</a></li>
+
 
 						</ul>
 						<div class="menu-toggle">
