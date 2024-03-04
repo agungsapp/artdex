@@ -19,4 +19,9 @@ class Post extends Model
     {
         return $this->belongsTo(User_custom::class, 'users_id', 'id');
     }
+
+    public function commments()
+    {
+        return $this->hasMany(CommentModel::class, 'id', 'post_id');
+    }
 }

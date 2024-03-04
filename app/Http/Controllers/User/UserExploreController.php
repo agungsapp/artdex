@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\CommentModel;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserExploreController extends Controller
 {
@@ -41,6 +43,24 @@ class UserExploreController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+
+        try {
+            $request->validate([
+                'comment' => 'required',
+            ]);
+
+            $comment = new CommentModel();
+            $comment->comment = $request->comment;
+            $comment->post_id = $request->post_id;
+            $comment->user_id = Auth::id();
+            $comment->save();
+
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            throw $th;
+            return "something went wrong in server";
+        }
     }
 
     /**
@@ -55,11 +75,13 @@ class UserExploreController extends Controller
 
         $post = Post::find($id);
         $author = User::find($post->users_id);
-        // dd($author);
+        $comments = CommentModel::where('post_id', $post->id)->get();
+        // dd($comments[0]->user());
 
         $data = [
             'post' => $post,
-            'author' => $author
+            'author' => $author,
+            'comments' => $comments
         ];
 
         return view('user.explore.show', $data);

@@ -1,4 +1,4 @@
-@extends('layouts.footer')
+{{-- @extends('layouts.footer') --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +33,7 @@
 										<a href="#" onclick="changeLanguage('en')"data-lang="en" class="eng">English</a>
 								</div>
 						</li>
-						<li><a href="profile">Profile</a></li>
+						<li><a href="{{ route('user.profile.index') }}">Profile</a></li>
 				</ul>
 				<div class="menu-toggle">
 						<input type="checkbox" name="" id="">
@@ -55,7 +55,10 @@
 														d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
 										</svg></button>
 								<div id="myDropdown" class="dropdown-content2">
-										<button id="openReportModalBtn">Report</button>
+										<a href="/oke"><button id="openReportModalBtn">Report</button></a>
+
+
+
 										<div id="reportModal" class="modal">
 												<div class="modal-content">
 														<span class="close" id="closeReportModalBtn">&times;</span>
@@ -84,32 +87,49 @@
 				</div>
 				<div class="comment">
 						<h2>Comment Section</h2>
-						<div class="user">
-								<div class="use">
-										<h3>{{ Auth::user()->name }}</h3>
-										<button id="btnReport2"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></button>
-										<div id="popupReport2" class="modal">
-												<div class="modal-content">
-														<span class="close" id="closePopup">&times;</span>
-														<h2>Laporkan Postingan</h2>
-														<form>
-																<label style="text-align: start" for="alasan">Alasan Laporan:</label>
-																<textarea id="alasan" name="alasan" rows="4" required></textarea>
-																<button type="submit">Kirim Laporan</button>
-														</form>
-												</div>
-										</div>
-								</div>
-								<img src="{{ Storage::url(Auth::user()->image) }}" alt="image post">
 
-								<div class="line"></div>
-								<p>{{ $post->description }}</p>
-						</div>
-						<div class="add-comment">
+						{{-- for loop --}}
+						@if ($comments->count() > 0)
+								@foreach ($comments as $comment)
+										<div class="user">
+												<div class="use">
+														<h3>{{ $comment->user()->first()->name }}</h3>
+														<button id="btnReport2"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></button>
+														<div id="popupReport2" class="modal">
+																<div class="modal-content">
+																		<span class="close" id="closePopup">&times;</span>
+																		<h2>Laporkan Postingan</h2>
+																		<form>
+																				<label style="text-align: start" for="alasan">Alasan Laporan:</label>
+																				<textarea id="alasan" name="alasan" rows="4" required></textarea>
+																				<button type="submit">Kirim Laporan</button>
+																		</form>
+																</div>
+														</div>
+												</div>
+												<img src="{{ Storage::url($comment->user()->first()->image) }}" alt="image post">
+
+												<div class="line"></div>
+												<p>{{ $comment->comment }}</p>
+										</div>
+								@endforeach
+						@else
+								<div class="user">
+										<div class="use">no comment data</div>
+								</div>
+
+						@endif
+
+						{{-- end loop --}}
+
+
+						<form action="{{ route('user.explore.store') }}" method="POST" class="add-comment">
+								@csrf
 								<h2>Add Comment</h2>
-								<textarea name="" placeholder="Type Something Here...." id="" cols="30" rows="10"></textarea>
-								<button class="add">Add</button>
-						</div>
+								<input type="hidden" value="{{ $post->id }}" name="post_id">
+								<textarea name="comment" placeholder="Type Something Here...." id="" cols="30" rows="10"></textarea>
+								<button type="submit" class="add">Add</button>
+						</form>
 				</div>
 		</div>
 		<script src="report.js"></script>

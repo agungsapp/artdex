@@ -37,7 +37,7 @@
 												<a href="#" onclick="changeLanguage('en')"data-lang="en" class="active">English</a>
 										</div>
 								</li>
-								<li><a href="profile">Profile</a></li>
+								<li><a href="{{ route('user.profile.index') }}">Profile</a></li>
 
 						</ul>
 						<div class="menu-toggle">
