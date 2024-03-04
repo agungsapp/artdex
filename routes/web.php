@@ -23,6 +23,8 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\UserNameController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\User\UserProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +55,12 @@ Route::prefix('app')->name('app.')->middleware(['admin'])->group(function () {
 Route::get('app/login', [AdminLoginController::class, 'login'])->name('app.login')->middleware(['admin.guest']);
 Route::post('app/logout', [AdminLoginController::class, 'logout'])->name('app.logout');
 Route::post('app/authenticate', [AdminLoginController::class, 'authenticate'])->name('app.authenticate')->middleware('guest');
+
+
+Route::prefix('user')->name('user.')->middleware(['auth'])->group(function () {
+    Route::resource('profile', UserProfileController::class);
+});
+
 //  NEW ROUTE AREA END
 
 Route::get('test', function () {
