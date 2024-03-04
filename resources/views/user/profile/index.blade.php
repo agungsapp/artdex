@@ -84,24 +84,29 @@
 												<span aria-hidden="true">&times;</span>
 										</button>
 								</div>
-								<div class="modal-body">
-										<!-- Formulir Edit Profile -->
-										<form>
+								<form action="{{ route('user.profile.update', Auth::id()) }}" method="POST" enctype="multipart/form-data">
+										@csrf
+										@method('PUT')
+
+										<div class="modal-body">
+												<!-- Formulir Edit Profile -->
 												<div class="form-group">
 														<label for="profilePhoto">Profile Photo</label>
-														<input type="file" class="form-control" id="profilePhoto">
+														<input type="file" class="form-control" name="image" id="profilePhoto">
 												</div>
 												<div class="form-group">
 														<label for="fullName">Full Name</label>
-														<input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+														<input type="text" class="form-control" value="{{ Auth::user()->name }}" id="fullName" name="name"
+																placeholder="Enter your full name">
 												</div>
-										</form>
-								</div>
-								<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-										<button type="button" style="background-color: goldenrod; border:none;" class="btn btn-primary">Save
-												Changes</button>
-								</div>
+										</div>
+										<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+												<button type="submit" style="background-color: goldenrod; border:none;" class="btn btn-primary">Save
+														Changes</button>
+										</div>
+								</form>
+
 						</div>
 				</div>
 		</div>
