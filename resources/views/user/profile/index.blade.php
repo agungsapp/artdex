@@ -55,7 +55,7 @@
 								{{-- for loop --}}
 								@foreach ($posts as $post)
 										<div class="col-lg-4 col-md-6 mix abstrak {{ Str::lower($post->type) }}">
-												<a href="spost"></a>
+											<a href="{{ route('user.explore.show', $post->id) }}">
 												<div class="single-portfolio" {{-- style="background-image: url({{ asset('') }})"> --}}
 														style="background-image: url({{ Storage::url($post->image) }})">
 														<h3 class="ttt">

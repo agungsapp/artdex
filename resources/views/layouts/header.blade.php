@@ -38,7 +38,7 @@
                         <li class="nav-item"><a class="nav-link" href="grid">EXPLORE</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#pricing">PREMIUM</a></li>
                         <li class="nav-item"><a class="nav-link" href="/#contact">CONTACT</a></li>
-                        <li class="nav-item"><a class="nav-link pr0" href="#">LANGUAGE</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link pr0" href="#">LANGUAGE</a></li> --}}
                         <li class="nav-item"><a class="nav-link pr0" href="profile">PROFILE</a></li>
                     </ul>
                 </div>

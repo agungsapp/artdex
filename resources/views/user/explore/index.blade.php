@@ -22,12 +22,14 @@
 <body>
 		<div class="wrapper">
 				<header>
-						<div class="logo">
-								<img src="logo.png" alt="">
-						</div>
+						<a href="/">
+							<div class="logo">
+								<img src="{{ asset('logo.png') }}" alt="">
+							</div>
+					</a>
 						<ul>
 								<li><a href="/">Home</a></li>
-								<li><a class="active" style="color: goldenrod" href="">Explore</a></li>
+								<li><a href="{{ route('user.explore.index') }}">Explore</a></li>
 								<li><a href="/#pricing">Premium</a></li>
 								<li><a href="/#contact">Contact</a></li>
 								<li class="dropdown">

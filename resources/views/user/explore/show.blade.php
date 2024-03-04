@@ -23,17 +23,17 @@
 				</div>
 				<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="grid">Explore</a></li>
+						<li><a href="{{ route('user.explore.index') }}">Explore</a></li>
 						<li><a href="/#pricing">Premium</a></li>
 						<li><a href="/#contact">Contact</a></li>
-						<li style="transform:translateY(-1%); color:" class="dropdown">
+						{{-- <li style="transform:translateY(-1%); color:" class="dropdown">
 								<a href="#" id="btnlanguage">Language</a>
 								<div class="dropdown-content">
 										<a href="#" onclick="changeLanguage('id')" data-lang="id" class="ind">Bahasa <br> Indonesia</a>
 										<a href="#" onclick="changeLanguage('en')"data-lang="en" class="eng">English</a>
 								</div>
-						</li>
-						<li><a href="profile">Profile</a></li>
+						</li> --}}
+						<li><a href="{{route('user.profile.index')}}">Profile</a></li>
 				</ul>
 				<div class="menu-toggle">
 						<input type="checkbox" name="" id="">

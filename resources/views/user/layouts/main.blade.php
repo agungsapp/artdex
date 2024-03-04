@@ -14,6 +14,7 @@
 				integrity="sha384-GLhlTQ8iK9tWQFvMz/3RnIwmeUUKJZZESt6nquI5qf61OpGA8l5+5S/SFIIJdA2z" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 				integrity="...">
+				<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 		<style>
 				header ul li a {
@@ -22,7 +23,7 @@
 
 				#portfolio {
 						padding: 0;
-						background-color: red;
+						/* background-color: red; */
 				}
 		</style>
 
@@ -51,16 +52,16 @@
 
 				<ul>
 						<li><a href="/">Home</a></li>
-						<li><a href="grid">Explore</a></li>
+						<li><a href="{{ route('user.explore.index') }}">Explore</a></li>
 						<li><a href="/#pricing">Premium</a></li>
 						<li><a href="/#contact">Contact</a></li>
-						<li style="transform:translateY(-1%); color:" class="dropdown">
+						{{-- <li style="transform:translateY(-1%); color:" class="dropdown">
 								<a href="#" id="btnlanguage">Language</a>
 								<div class="dropdown-content">
 										<a href="#" onclick="changeLanguage('id')" data-lang="id" class="ind">Bahasa <br> Indonesia</a>
 										<a href="#" onclick="changeLanguage('en')"data-lang="en" class="eng">English</a>
 								</div>
-						</li>
+						</li> --}}
 						<li><a style="color: goldenrod" href="profile">Profile</a></li>
 
 				</ul>
@@ -99,7 +100,8 @@
 		<script src="{{ asset('assets') }}/js/skill.bar.js"></script>
 		<script src="{{ asset('assets') }}/js/fact.counter.js"></script>
 		<script src="{{ asset('assets') }}/js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+	</body>
 
 </html>
